@@ -98,5 +98,8 @@
   <ItemGroup>
     <None Include="PIcture\Colorful Modern Geometric Book Shop Logo .png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="PIcture\register background.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

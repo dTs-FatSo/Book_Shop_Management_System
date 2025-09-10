@@ -30,14 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.lblloginname = new System.Windows.Forms.Label();
-            this.lbluname = new System.Windows.Forms.Label();
-            this.lblupass = new System.Windows.Forms.Label();
             this.txtUname = new System.Windows.Forms.TextBox();
             this.txtupass = new System.Windows.Forms.TextBox();
             this.lblerror = new System.Windows.Forms.Label();
             this.lblerrorpass = new System.Windows.Forms.Label();
             this.btnlogin = new System.Windows.Forms.Button();
             this.lblnewuser = new System.Windows.Forms.Label();
+            this.lblupass = new System.Windows.Forms.Label();
+            this.lbluname = new System.Windows.Forms.Label();
+            this.btnowner = new System.Windows.Forms.Button();
+            this.btnemployee = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblloginname
@@ -51,30 +53,6 @@
             this.lblloginname.TabIndex = 0;
             this.lblloginname.Text = "JIBS BOOK SHOP";
             this.lblloginname.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lbluname
-            // 
-            this.lbluname.AutoSize = true;
-            this.lbluname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbluname.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbluname.Location = new System.Drawing.Point(89, 255);
-            this.lbluname.Name = "lbluname";
-            this.lbluname.Size = new System.Drawing.Size(91, 31);
-            this.lbluname.TabIndex = 1;
-            this.lbluname.Text = "User Name";
-            this.lbluname.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // lblupass
-            // 
-            this.lblupass.AutoSize = true;
-            this.lblupass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblupass.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblupass.Location = new System.Drawing.Point(89, 347);
-            this.lblupass.Name = "lblupass";
-            this.lblupass.Size = new System.Drawing.Size(81, 31);
-            this.lblupass.TabIndex = 2;
-            this.lblupass.Text = "Password";
-            this.lblupass.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // txtUname
             // 
@@ -134,27 +112,73 @@
             this.lblnewuser.AutoSize = true;
             this.lblnewuser.BackColor = System.Drawing.Color.White;
             this.lblnewuser.ForeColor = System.Drawing.Color.Red;
-            this.lblnewuser.Location = new System.Drawing.Point(128, 519);
+            this.lblnewuser.Location = new System.Drawing.Point(122, 515);
             this.lblnewuser.Name = "lblnewuser";
             this.lblnewuser.Size = new System.Drawing.Size(211, 34);
-            this.lblnewuser.TabIndex = 8;
+            this.lblnewuser.TabIndex = 9;
             this.lblnewuser.Text = "New user? Sign in Now.";
-            this.lblnewuser.Click += new System.EventHandler(this.label1_Click_3);
+            this.lblnewuser.Click += new System.EventHandler(this.lblnewuser1_Click);
+            // 
+            // lblupass
+            // 
+            this.lblupass.AutoSize = true;
+            this.lblupass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblupass.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblupass.Location = new System.Drawing.Point(89, 347);
+            this.lblupass.Name = "lblupass";
+            this.lblupass.Size = new System.Drawing.Size(81, 31);
+            this.lblupass.TabIndex = 10;
+            this.lblupass.Text = "Password";
+            this.lblupass.Click += new System.EventHandler(this.lblupass_Click);
+            // 
+            // lbluname
+            // 
+            this.lbluname.AutoSize = true;
+            this.lbluname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbluname.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluname.Location = new System.Drawing.Point(89, 255);
+            this.lbluname.Name = "lbluname";
+            this.lbluname.Size = new System.Drawing.Size(91, 31);
+            this.lbluname.TabIndex = 11;
+            this.lbluname.Text = "User Name";
+            this.lbluname.Click += new System.EventHandler(this.lbluname_Click);
+            // 
+            // btnowner
+            // 
+            this.btnowner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnowner.Location = new System.Drawing.Point(264, 556);
+            this.btnowner.Name = "btnowner";
+            this.btnowner.Size = new System.Drawing.Size(88, 41);
+            this.btnowner.TabIndex = 12;
+            this.btnowner.Text = "Owner";
+            this.btnowner.UseVisualStyleBackColor = false;
+            // 
+            // btnemployee
+            // 
+            this.btnemployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnemployee.Location = new System.Drawing.Point(89, 556);
+            this.btnemployee.Name = "btnemployee";
+            this.btnemployee.Size = new System.Drawing.Size(108, 41);
+            this.btnemployee.TabIndex = 13;
+            this.btnemployee.Text = "Employee";
+            this.btnemployee.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 34F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Book_Shop_Management_System.Properties.Resources.blue_black_minimalist_vintage_door_logo2;
-            this.ClientSize = new System.Drawing.Size(632, 653);
+            this.ClientSize = new System.Drawing.Size(628, 649);
+            this.Controls.Add(this.btnemployee);
+            this.Controls.Add(this.btnowner);
+            this.Controls.Add(this.lbluname);
+            this.Controls.Add(this.lblupass);
             this.Controls.Add(this.lblnewuser);
             this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.lblerrorpass);
             this.Controls.Add(this.lblerror);
             this.Controls.Add(this.txtupass);
             this.Controls.Add(this.txtUname);
-            this.Controls.Add(this.lblupass);
-            this.Controls.Add(this.lbluname);
             this.Controls.Add(this.lblloginname);
             this.Font = new System.Drawing.Font("Microsoft Uighur", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -171,14 +195,16 @@
         #endregion
 
         private System.Windows.Forms.Label lblloginname;
-        private System.Windows.Forms.Label lbluname;
-        private System.Windows.Forms.Label lblupass;
         private System.Windows.Forms.TextBox txtUname;
         private System.Windows.Forms.TextBox txtupass;
         private System.Windows.Forms.Label lblerror;
         private System.Windows.Forms.Label lblerrorpass;
         private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.Label lblnewuser;
+        private System.Windows.Forms.Label lblupass;
+        private System.Windows.Forms.Label lbluname;
+        private System.Windows.Forms.Button btnowner;
+        private System.Windows.Forms.Button btnemployee;
     }
 }
 

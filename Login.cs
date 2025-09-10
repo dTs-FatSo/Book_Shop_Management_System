@@ -75,5 +75,22 @@ namespace Book_Shop_Management_System
         {
 
         }
+
+        private void lblnewuser1_Click(object sender, EventArgs e)
+        {
+            Register r1 = new Register();
+            r1.Show();
+            this.Hide();
+        }
+
+        private void lbluname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblupass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
