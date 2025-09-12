@@ -63,6 +63,16 @@ namespace Book_Shop_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blue_black_minimalist_vintage_door_logo {
             get {
                 object obj = ResourceManager.GetObject("blue black minimalist vintage door logo", resourceCulture);
@@ -106,6 +116,16 @@ namespace Book_Shop_Management_System.Properties {
         internal static System.Drawing.Bitmap register_background {
             get {
                 object obj = ResourceManager.GetObject("register background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userprofile {
+            get {
+                object obj = ResourceManager.GetObject("userprofile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

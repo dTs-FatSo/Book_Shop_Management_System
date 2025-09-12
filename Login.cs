@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Book_Shop_Management_System
 {
     public partial class Login : Form
     {
-        public string username = "jihad";
-        public string pass = "143611";
+        public string username, pass;
         public Login()
         {
             InitializeComponent();
@@ -56,15 +57,38 @@ namespace Book_Shop_Management_System
                 lblerror.Text = " * User Name required !";
             if (txtupass.Text == "")
                 lblerrorpass.Text = " * Password required !";
-            if (txtUname.Text == username && txtupass.Text == pass)
-            {
-                MessageBox.Show("Login Successfully !");
+            username = txtUname.Text;
+            pass = txtupass.Text;
+            string connectionString = @"Data Source=LAPTOP-7FEPICVT;Initial Catalog=BSMS;Integrated Security=True;";
+            SqlConnection conn = new SqlConnection(connectionString);
+            try {
+                conn.Open();
+                String query = "Select count(*) from customer where cname = '"+username+"' and password = '"+pass+"'";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                int result= (int)cmd.ExecuteScalar();
+                    if (result > 0)
+                    {
+                        
+                    Session.CurrentUsername = txtUname.Text;
+                    user_dashboard u1 = new user_dashboard();
+                    u1.Show();
+                    this.Hide();
+                }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password.");
+                    }
+                        cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-            else
-            {
-                MessageBox.Show("Invalid Credentials !");
-            }
-        }
 
         private void lblerror_Click(object sender, EventArgs e)
         {

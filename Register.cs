@@ -62,6 +62,14 @@ namespace Book_Shop_Management_System
                     MessageBox.Show("Please fill all points correctly ! ", "Error !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                if (!txtuname.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+                {
+                    MessageBox.Show("Username must contain only letters and spaces.",
+                                    "Validation Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
                 if (!long.TryParse(txtphone.Text, out _))
                 {
                     MessageBox.Show("Phone number must be numeric.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -90,27 +98,46 @@ namespace Book_Shop_Management_System
                 phone = txtphone.Text;
                 email = txtemail.Text;
                 //dob = dtp_dob_user.Text;
-
                 try
                 {
-                    if (rdbmale.Checked)
-                        gender = "Male";
-                    if (rdbfemale.Checked)
-                        gender = "Female";
-                    if (rdbother.Checked)
-                        gender = "Others";
                     string connectionString = @"Data Source=LAPTOP-7FEPICVT;Initial Catalog=BSMS;Integrated Security=True;";
                     SqlConnection conn = new SqlConnection(connectionString);
                     conn.Open();
-                    String query = "insert into customer (cname,phoneNumber,email,password,gender,dateofbirth) values ('" + uname + "','" + phone + "','" + email + "','" + upass + "','" + gender + "','" + dtp_dob_user.Value + "')";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.ExecuteNonQuery();
+                    String checkquery = "Select count(*) from customer where cname = '" + uname + "'";
+                    SqlCommand checkcmd = new SqlCommand(checkquery, conn);
+                    int count =(int)checkcmd.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Username Already exists. Please chose different user Name.");
+                    }
+                    else {
+                        try
+                        {
+                            if (rdbmale.Checked)
+                                gender = "Male";
+                            if (rdbfemale.Checked)
+                                gender = "Female";
+                            if (rdbother.Checked)
+                                gender = "Others";
+                            //string connectionString = @"Data Source=LAPTOP-7FEPICVT;Initial Catalog=BSMS;Integrated Security=True;";
+                            //SqlConnection conn = new SqlConnection(connectionString);
+                            conn.Open();
+                            String query = "insert into customer (cname,phoneNumber,email,password,gender,dateofbirth) values ('" + uname + "','" + phone + "','" + email + "','" + upass + "','" + gender + "','" + dtp_dob_user.Value + "')";
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error: " + ex.Message);
+                        }
+                        MessageBox.Show("Account created successfully ! ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                catch (Exception ex)
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Error : " + ex.Message);
                 }
-                MessageBox.Show("Account created successfully ! ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (Exception ex)
             {
