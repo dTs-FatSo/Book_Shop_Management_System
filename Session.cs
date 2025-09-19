@@ -12,5 +12,6 @@ namespace Book_Shop_Management_System
         public static string CurrentUsername;
         public static string CurrentOwnerName;
         public static int CurrentUserID;
+        public static int CurrentOwnerID;
     }
 }

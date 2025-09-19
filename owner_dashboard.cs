@@ -30,7 +30,7 @@ namespace Book_Shop_Management_System
 
         private void owner_dashboard_Load(object sender, EventArgs e)
         {
-
+            txt_owner_uname.Text =Session.CurrentOwnerName;
         }
 
         private void txt_d_uname_TextChanged(object sender, EventArgs e)

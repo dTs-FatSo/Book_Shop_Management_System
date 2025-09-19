@@ -102,7 +102,6 @@ namespace Book_Shop_Management_System
                 upass = txtupass.Text;
                 phone = txtphone.Text;
                 email = txtemail.Text;
-                //dob = dtp_dob_user.Text;
                 try
                 {
                     string connectionString = @"Data Source=LAPTOP-7FEPICVT;Initial Catalog=BSMS;Integrated Security=True;";
@@ -124,18 +123,57 @@ namespace Book_Shop_Management_System
                                 gender = "Female";
                             if (rdbother.Checked)
                                 gender = "Others";
-                            //string connectionString = @"Data Source=LAPTOP-7FEPICVT;Initial Catalog=BSMS;Integrated Security=True;";
-                            //SqlConnection conn = new SqlConnection(connectionString);
-                            conn.Open();
-                            String query = "insert into customer (cname,phoneNumber,email,password,gender,dateofbirth) values ('" + uname + "','" + phone + "','" + email + "','" + upass + "','" + gender + "','" + dtp_dob_user.Value + "')";
-                            SqlCommand cmd = new SqlCommand(query, conn);
-                            cmd.ExecuteNonQuery();
+
+                            //conn.Open();
+                            SqlTransaction transaction = conn.BeginTransaction();
+
+
+                            try
+                            {
+                                // Insert customer and get new cid
+                                string insertCustomerQuery = @"
+                                    INSERT INTO customer (cname, phoneNumber, email, password, gender, dateofbirth) 
+                                    OUTPUT INSERTED.cid
+                                    VALUES (@uname, @phone, @email, @upass, @gender, @dob);";
+
+                                SqlCommand cmdCustomer = new SqlCommand(insertCustomerQuery, conn, transaction);
+                                cmdCustomer.Parameters.AddWithValue("@uname", uname);
+                                cmdCustomer.Parameters.AddWithValue("@phone", phone);
+                                cmdCustomer.Parameters.AddWithValue("@email", email);
+                                cmdCustomer.Parameters.AddWithValue("@upass", upass);
+                                cmdCustomer.Parameters.AddWithValue("@gender", gender);
+                                cmdCustomer.Parameters.AddWithValue("@dob", dtp_dob_user.Value);
+
+                                int newCid = (int)cmdCustomer.ExecuteScalar();
+
+                                // Insert account with default balance 500
+                                string insertAccountQuery = @"
+                                    INSERT INTO Account (accName, balance, creationDate, cid) 
+                                    VALUES (@accName, @balance, @creationDate, @cid);";
+
+                                SqlCommand cmdAccount = new SqlCommand(insertAccountQuery, conn, transaction);
+                                cmdAccount.Parameters.AddWithValue("@accName", uname);  // you can use username as accName
+                                cmdAccount.Parameters.AddWithValue("@balance", 500);    // default balance
+                                cmdAccount.Parameters.AddWithValue("@creationDate", DateTime.Now);
+                                cmdAccount.Parameters.AddWithValue("@cid", newCid);
+
+                                cmdAccount.ExecuteNonQuery();
+
+                                // Commit transaction
+                                transaction.Commit();
+
+                                MessageBox.Show("Account created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                transaction.Rollback();
+                                MessageBox.Show("Error: " + ex.Message);
+                            }
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Error: " + ex.Message);
                         }
-                        MessageBox.Show("Account created successfully ! ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch(Exception ex)

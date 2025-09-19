@@ -71,29 +71,50 @@ namespace Book_Shop_Management_System
             using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-7FEPICVT;Initial Catalog=BSMS;Integrated Security=True;"))
             {
                 conn.Open();
-
-                // Move cart → purchase
-                string insertQuery = @"
-            INSERT INTO Purchase (cID, bID, pAmount, pDate)
-            SELECT cID, bID, pAmount, GETDATE()
-            FROM Cart WHERE CartID = @cartId";
-
-                using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
+                SqlTransaction transaction = conn.BeginTransaction();
+                try
                 {
-                    cmd.Parameters.AddWithValue("@cartId", cartId);
-                    cmd.ExecuteNonQuery();
+
+                    string insertPurchaseQuery = @" INSERT INTO Purchase (cID, bID, pAmount, pDate) SELECT cID, bID, pAmount, GETDATE() FROM Cart WHERE CartID = @cartId";
+
+                    using (SqlCommand cmd = new SqlCommand(insertPurchaseQuery, conn, transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@cartId", cartId);
+                        cmd.ExecuteNonQuery();
+                    }
+                    string insertSaleQuery = @"INSERT INTO Sale (eID, bID, saleDate) SELECT @eID, bID, GETDATE() FROM Cart WHERE CartID = @cartId";
+
+                    using (SqlCommand cmd = new SqlCommand(insertSaleQuery, conn, transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@cartId", cartId);
+                        cmd.Parameters.AddWithValue("@eID", Session.CurrentOwnerID);
+                        cmd.ExecuteNonQuery();
+                    }
+                    string insertemployeeAccounteQuery = @"INSERT INTO EmployeeAccount (eID,accNumber) select @eID, accNumber from Account where cid = (select cid from Cart where CartID = @cartID)";
+
+                    using (SqlCommand cmd = new SqlCommand(insertemployeeAccounteQuery, conn, transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@cartId", cartId);
+                        cmd.Parameters.AddWithValue("@eID", Session.CurrentOwnerID);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // Update cart status
+                    string updateQuery = "UPDATE Cart SET Status = 'Confirmed' WHERE CartID = @cartId";
+                    using (SqlCommand cmd = new SqlCommand(updateQuery, conn,transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@cartId", cartId);
+                        cmd.ExecuteNonQuery();
+                    }
+                    transaction.Commit();
+                    MessageBox.Show("Order confirmed and added to Purchase history!");
                 }
-
-                // Update cart status
-                string updateQuery = "UPDATE Cart SET Status = 'Confirmed' WHERE CartID = @cartId";
-                using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
+                catch (Exception ex)
                 {
-                    cmd.Parameters.AddWithValue("@cartId", cartId);
-                    cmd.ExecuteNonQuery();
+                    transaction.Rollback();
+                    MessageBox.Show("Error confirming order. "+ ex.Message );
                 }
             }
-
-            MessageBox.Show("Order confirmed and added to Purchase history!");
             LoadPendingOrders();
         }
 

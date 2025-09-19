@@ -56,22 +56,24 @@ namespace Book_Shop_Management_System
             try
             {
                 conn.Open();
-                String query = "Select count(*) from Employee where eName = '" + username + "' and ePassword = '" + pass + "' and role = 'Owner' ";
+                String query = "Select eID, eName from Employee where eName = '" + username + "' and ePassword = '" + pass + "' and role = 'Owner' ";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                int result = (int)cmd.ExecuteScalar();
-                if (result > 0)
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
+                    if (reader.Read())
+                    {
+                        Session.CurrentOwnerID = Convert.ToInt32(reader["eID"]);
+                        Session.CurrentOwnerName = reader["eName"].ToString();
+                        owner_dashboard d1 = new owner_dashboard();
+                        d1.Show();
+                        this.Hide();
 
-                    Session.CurrentOwnerName = txt_own_name.Text;
-                    owner_dashboard d1 = new owner_dashboard();
-                    d1.Show();
-                    this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Invalid Username or Password.");
-                }
-                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
