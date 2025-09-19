@@ -32,6 +32,7 @@
             this.pnl_user_up = new System.Windows.Forms.Panel();
             this.btncross = new System.Windows.Forms.Button();
             this.pnl_user_side = new System.Windows.Forms.Panel();
+            this.btn_receipt = new System.Windows.Forms.Button();
             this.btn_search_book = new System.Windows.Forms.Button();
             this.btnedit = new System.Windows.Forms.Button();
             this.txt_d_uname = new System.Windows.Forms.TextBox();
@@ -50,6 +51,7 @@
             this.pnl_user_up.Name = "pnl_user_up";
             this.pnl_user_up.Size = new System.Drawing.Size(952, 39);
             this.pnl_user_up.TabIndex = 0;
+            this.pnl_user_up.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_user_up_Paint);
             // 
             // btncross
             // 
@@ -63,7 +65,8 @@
             // 
             // pnl_user_side
             // 
-            this.pnl_user_side.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnl_user_side.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pnl_user_side.Controls.Add(this.btn_receipt);
             this.pnl_user_side.Controls.Add(this.btn_search_book);
             this.pnl_user_side.Controls.Add(this.btnedit);
             this.pnl_user_side.Controls.Add(this.txt_d_uname);
@@ -75,9 +78,19 @@
             this.pnl_user_side.TabIndex = 1;
             this.pnl_user_side.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_user_side_Paint);
             // 
+            // btn_receipt
+            // 
+            this.btn_receipt.Location = new System.Drawing.Point(76, 373);
+            this.btn_receipt.Name = "btn_receipt";
+            this.btn_receipt.Size = new System.Drawing.Size(170, 40);
+            this.btn_receipt.TabIndex = 7;
+            this.btn_receipt.Text = "Print Receipt";
+            this.btn_receipt.UseVisualStyleBackColor = true;
+            this.btn_receipt.Click += new System.EventHandler(this.btn_receipt_Click);
+            // 
             // btn_search_book
             // 
-            this.btn_search_book.Location = new System.Drawing.Point(123, 263);
+            this.btn_search_book.Location = new System.Drawing.Point(76, 311);
             this.btn_search_book.Name = "btn_search_book";
             this.btn_search_book.Size = new System.Drawing.Size(170, 40);
             this.btn_search_book.TabIndex = 6;
@@ -87,7 +100,7 @@
             // 
             // btnedit
             // 
-            this.btnedit.Location = new System.Drawing.Point(123, 202);
+            this.btnedit.Location = new System.Drawing.Point(76, 250);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(170, 40);
             this.btnedit.TabIndex = 5;
@@ -127,20 +140,23 @@
             this.lbl_u_dash.Size = new System.Drawing.Size(201, 47);
             this.lbl_u_dash.TabIndex = 2;
             this.lbl_u_dash.Text = "User Dashboard";
+            this.lbl_u_dash.Click += new System.EventHandler(this.lbl_u_dash_Click);
             // 
             // pnl_user_main
             // 
-            this.pnl_user_main.Location = new System.Drawing.Point(299, 36);
+            this.pnl_user_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnl_user_main.Location = new System.Drawing.Point(300, 40);
             this.pnl_user_main.Name = "pnl_user_main";
             this.pnl_user_main.Size = new System.Drawing.Size(653, 663);
             this.pnl_user_main.TabIndex = 2;
+            this.pnl_user_main.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_user_main_Paint);
             // 
             // user_dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Book_Shop_Management_System.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(953, 700);
+            this.ClientSize = new System.Drawing.Size(953, 655);
             this.Controls.Add(this.pnl_user_main);
             this.Controls.Add(this.pnl_user_up);
             this.Controls.Add(this.pnl_user_side);
@@ -169,5 +185,6 @@
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.Button btncross;
         private System.Windows.Forms.Button btn_search_book;
+        private System.Windows.Forms.Button btn_receipt;
     }
 }

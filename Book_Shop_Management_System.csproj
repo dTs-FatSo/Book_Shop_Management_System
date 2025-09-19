@@ -52,6 +52,24 @@
     <Compile Include="cstmr.Designer.cs">
       <DependentUpon>cstmr.cs</DependentUpon>
     </Compile>
+    <Compile Include="owner_approve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="owner_approve.Designer.cs">
+      <DependentUpon>owner_approve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="owner_dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="owner_dashboard.Designer.cs">
+      <DependentUpon>owner_dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="owner_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="owner_login.Designer.cs">
+      <DependentUpon>owner_login.cs</DependentUpon>
+    </Compile>
     <Compile Include="purchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,8 +97,23 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_receipt.Designer.cs">
+      <DependentUpon>User_receipt.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="cstmr.resx">
       <DependentUpon>cstmr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="owner_approve.resx">
+      <DependentUpon>owner_approve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="owner_dashboard.resx">
+      <DependentUpon>owner_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="owner_login.resx">
+      <DependentUpon>owner_login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="purchase.resx">
       <DependentUpon>purchase.cs</DependentUpon>
@@ -103,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_receipt.resx">
+      <DependentUpon>User_receipt.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

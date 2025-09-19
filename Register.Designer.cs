@@ -133,6 +133,7 @@
             this.txtuname.Name = "txtuname";
             this.txtuname.Size = new System.Drawing.Size(299, 32);
             this.txtuname.TabIndex = 8;
+            this.txtuname.TextChanged += new System.EventHandler(this.txtuname_TextChanged);
             // 
             // txtupass
             // 

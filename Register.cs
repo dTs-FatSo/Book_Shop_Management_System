@@ -34,6 +34,11 @@ namespace Book_Shop_Management_System
 
         }
 
+        private void txtuname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void label1_Click_2(object sender, EventArgs e)
         {
 

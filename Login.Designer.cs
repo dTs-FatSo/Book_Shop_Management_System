@@ -152,6 +152,7 @@
             this.btnowner.TabIndex = 12;
             this.btnowner.Text = "Owner";
             this.btnowner.UseVisualStyleBackColor = false;
+            this.btnowner.Click += new System.EventHandler(this.btnowner_Click);
             // 
             // btnemployee
             // 

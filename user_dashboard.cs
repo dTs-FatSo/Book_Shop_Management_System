@@ -58,6 +58,7 @@ namespace Book_Shop_Management_System
         private void txtuname_TextChanged(object sender, EventArgs e)
         {
             
+
         }
 
         private void pnl_user_side_Paint(object sender, PaintEventArgs e)
@@ -68,6 +69,26 @@ namespace Book_Shop_Management_System
         private void btn_search_book_Click(object sender, EventArgs e)
         {
             loadform(new purchase());
+        }
+
+        private void pnl_user_main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnl_user_up_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl_u_dash_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_receipt_Click(object sender, EventArgs e)
+        {
+            loadform(new User_receipt());
         }
     }
 }
