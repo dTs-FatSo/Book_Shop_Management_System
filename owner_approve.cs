@@ -30,11 +30,11 @@ namespace Book_Shop_Management_System
                 conn.Open();
                 string query = @"
             SELECT 
-                c.CartID,
-                u.cname,
-                b.bName,
-                c.pAmount,
-                c.pDate,
+                c.CartID as [Cart ID],
+                u.cname as [Customer Name],
+                b.bName as [Book Name],
+                c.pAmount as Amount,
+                c.pDate as [Purchase Date],
                 c.Status
             FROM Cart c
             INNER JOIN Book b ON c.bID = b.bID
@@ -153,6 +153,11 @@ namespace Book_Shop_Management_System
                 }
 
             }
+        }
+
+        private void dgv_pendingorders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

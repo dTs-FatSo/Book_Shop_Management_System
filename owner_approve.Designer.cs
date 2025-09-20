@@ -63,6 +63,7 @@
             this.dgv_pendingorders.Size = new System.Drawing.Size(642, 150);
             this.dgv_pendingorders.TabIndex = 1;
             this.dgv_pendingorders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pendingorders_CellClick);
+            this.dgv_pendingorders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pendingorders_CellContentClick);
             // 
             // btn_confirm
             // 
