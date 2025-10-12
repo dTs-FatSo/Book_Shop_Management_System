@@ -46,11 +46,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Author Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author Dashboard.Designer.cs">
+      <DependentUpon>Author Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author Login.Designer.cs">
+      <DependentUpon>Author Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author.Designer.cs">
+      <DependentUpon>Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorStats.Designer.cs">
+      <DependentUpon>AuthorStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author_update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author_update.Designer.cs">
+      <DependentUpon>Author_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Book.Designer.cs">
+      <DependentUpon>Book.cs</DependentUpon>
+    </Compile>
     <Compile Include="cstmr.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="cstmr.Designer.cs">
       <DependentUpon>cstmr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Dashboard.Designer.cs">
+      <DependentUpon>Employee Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Login.Designer.cs">
+      <DependentUpon>Employee Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee_update.Designer.cs">
+      <DependentUpon>Employee_update.cs</DependentUpon>
     </Compile>
     <Compile Include="owner_approve.cs">
       <SubType>Form</SubType>
@@ -76,7 +136,55 @@
     <Compile Include="purchase.Designer.cs">
       <DependentUpon>purchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Purchase_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase_History.Designer.cs">
+      <DependentUpon>Purchase_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report Solving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Solving.Designer.cs">
+      <DependentUpon>Report Solving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales history.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales history.Designer.cs">
+      <DependentUpon>Sales history.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search_Books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Books.Designer.cs">
+      <DependentUpon>Search_Books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sells.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sells.Designer.cs">
+      <DependentUpon>Sells.cs</DependentUpon>
+    </Compile>
     <Compile Include="Session.cs" />
+    <Compile Include="top sold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="top sold.Designer.cs">
+      <DependentUpon>top sold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update_cstmr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_cstmr.Designer.cs">
+      <DependentUpon>update_cstmr.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,8 +211,38 @@
     <Compile Include="User_receipt.Designer.cs">
       <DependentUpon>User_receipt.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Author Dashboard.resx">
+      <DependentUpon>Author Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author Login.resx">
+      <DependentUpon>Author Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author.resx">
+      <DependentUpon>Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthorStats.resx">
+      <DependentUpon>AuthorStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author_update.resx">
+      <DependentUpon>Author_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book.resx">
+      <DependentUpon>Book.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cstmr.resx">
       <DependentUpon>cstmr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Dashboard.resx">
+      <DependentUpon>Employee Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Login.resx">
+      <DependentUpon>Employee Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee_update.resx">
+      <DependentUpon>Employee_update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="owner_approve.resx">
       <DependentUpon>owner_approve.cs</DependentUpon>
@@ -117,6 +255,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="purchase.resx">
       <DependentUpon>purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase_History.resx">
+      <DependentUpon>Purchase_History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report Solving.resx">
+      <DependentUpon>Report Solving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales history.resx">
+      <DependentUpon>Sales history.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Books.resx">
+      <DependentUpon>Search_Books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sells.resx">
+      <DependentUpon>Sells.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="top sold.resx">
+      <DependentUpon>top sold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update_cstmr.resx">
+      <DependentUpon>update_cstmr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_dashboard.resx">
       <DependentUpon>user_dashboard.cs</DependentUpon>

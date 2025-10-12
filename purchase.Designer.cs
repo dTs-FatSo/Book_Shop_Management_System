@@ -56,7 +56,7 @@
             // btn_pur_search
             // 
             this.btn_pur_search.BackgroundImage = global::Book_Shop_Management_System.Properties.Resources.background;
-            this.btn_pur_search.Location = new System.Drawing.Point(534, 40);
+            this.btn_pur_search.Location = new System.Drawing.Point(519, 40);
             this.btn_pur_search.Name = "btn_pur_search";
             this.btn_pur_search.Size = new System.Drawing.Size(75, 37);
             this.btn_pur_search.TabIndex = 1;

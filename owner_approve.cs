@@ -66,7 +66,7 @@ namespace Book_Shop_Management_System
                 return;
             }
 
-            int cartId = Convert.ToInt32(dgv_pendingorders.SelectedRows[0].Cells["CartID"].Value);
+            int cartId = Convert.ToInt32(dgv_pendingorders.SelectedRows[0].Cells["Cart ID"].Value);
 
             using (SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-7FEPICVT;Initial Catalog=BSMS;Integrated Security=True;"))
             {
@@ -158,6 +158,11 @@ namespace Book_Shop_Management_System
         private void dgv_pendingorders_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

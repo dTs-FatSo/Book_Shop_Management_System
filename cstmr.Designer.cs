@@ -89,7 +89,7 @@
             this.lbl_p_phone.AutoSize = true;
             this.lbl_p_phone.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lbl_p_phone.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_p_phone.Location = new System.Drawing.Point(98, 319);
+            this.lbl_p_phone.Location = new System.Drawing.Point(85, 319);
             this.lbl_p_phone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_p_phone.Name = "lbl_p_phone";
             this.lbl_p_phone.Size = new System.Drawing.Size(88, 31);
@@ -101,7 +101,7 @@
             this.lbl_p_dob.AutoSize = true;
             this.lbl_p_dob.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lbl_p_dob.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_p_dob.Location = new System.Drawing.Point(76, 251);
+            this.lbl_p_dob.Location = new System.Drawing.Point(85, 251);
             this.lbl_p_dob.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_p_dob.Name = "lbl_p_dob";
             this.lbl_p_dob.Size = new System.Drawing.Size(110, 31);
@@ -113,7 +113,7 @@
             this.lbl_p_email.AutoSize = true;
             this.lbl_p_email.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lbl_p_email.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_p_email.Location = new System.Drawing.Point(122, 181);
+            this.lbl_p_email.Location = new System.Drawing.Point(85, 180);
             this.lbl_p_email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_p_email.Name = "lbl_p_email";
             this.lbl_p_email.Size = new System.Drawing.Size(64, 31);
@@ -125,7 +125,7 @@
             this.lbl_p_upass.AutoSize = true;
             this.lbl_p_upass.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lbl_p_upass.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_p_upass.Location = new System.Drawing.Point(95, 106);
+            this.lbl_p_upass.Location = new System.Drawing.Point(85, 106);
             this.lbl_p_upass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_p_upass.Name = "lbl_p_upass";
             this.lbl_p_upass.Size = new System.Drawing.Size(91, 31);

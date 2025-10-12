@@ -57,5 +57,50 @@ namespace Book_Shop_Management_System
         public void pnl_owner_main_Paint(object sender, PaintEventArgs e)
         {
         }
+
+        private void btn_search_employee_Click(object sender, EventArgs e)
+        {
+            loadform(new Employee());
+        }
+
+        private void btn_add_book_Click(object sender, EventArgs e)
+        {
+            loadform(new Book());
+        }
+
+        private void btn_author_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_author_Click_1(object sender, EventArgs e)
+        {
+            loadform(new Author());
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            loadform(new update_cstmr());
+        }
+
+        private void btn_purchase_history_Click(object sender, EventArgs e)
+        {
+            loadform(new Purchase_History());
+        }
+
+        private void pnl_owner_main_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_submitted_reports_Click(object sender, EventArgs e)
+        {
+            loadform(new Report_Solving("Owner"));
+        }
     }
 }

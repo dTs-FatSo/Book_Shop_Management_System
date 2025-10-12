@@ -32,6 +32,7 @@
             this.pnl_user_up = new System.Windows.Forms.Panel();
             this.btncross = new System.Windows.Forms.Button();
             this.pnl_user_side = new System.Windows.Forms.Panel();
+            this.btn_submit_report = new System.Windows.Forms.Button();
             this.btn_receipt = new System.Windows.Forms.Button();
             this.btn_search_book = new System.Windows.Forms.Button();
             this.btnedit = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.lblwelcome = new System.Windows.Forms.Label();
             this.lbl_u_dash = new System.Windows.Forms.Label();
             this.pnl_user_main = new System.Windows.Forms.Panel();
+            this.btn_top_sold = new System.Windows.Forms.Button();
             this.pnl_user_up.SuspendLayout();
             this.pnl_user_side.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +68,8 @@
             // pnl_user_side
             // 
             this.pnl_user_side.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pnl_user_side.Controls.Add(this.btn_top_sold);
+            this.pnl_user_side.Controls.Add(this.btn_submit_report);
             this.pnl_user_side.Controls.Add(this.btn_receipt);
             this.pnl_user_side.Controls.Add(this.btn_search_book);
             this.pnl_user_side.Controls.Add(this.btnedit);
@@ -77,6 +81,16 @@
             this.pnl_user_side.Size = new System.Drawing.Size(301, 698);
             this.pnl_user_side.TabIndex = 1;
             this.pnl_user_side.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_user_side_Paint);
+            // 
+            // btn_submit_report
+            // 
+            this.btn_submit_report.Location = new System.Drawing.Point(76, 429);
+            this.btn_submit_report.Name = "btn_submit_report";
+            this.btn_submit_report.Size = new System.Drawing.Size(170, 40);
+            this.btn_submit_report.TabIndex = 8;
+            this.btn_submit_report.Text = "Submit Report";
+            this.btn_submit_report.UseVisualStyleBackColor = true;
+            this.btn_submit_report.Click += new System.EventHandler(this.btn_submit_report_Click);
             // 
             // btn_receipt
             // 
@@ -144,19 +158,29 @@
             // 
             // pnl_user_main
             // 
-            this.pnl_user_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnl_user_main.BackColor = System.Drawing.Color.PaleTurquoise;
             this.pnl_user_main.Location = new System.Drawing.Point(300, 40);
             this.pnl_user_main.Name = "pnl_user_main";
             this.pnl_user_main.Size = new System.Drawing.Size(653, 663);
             this.pnl_user_main.TabIndex = 2;
             this.pnl_user_main.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_user_main_Paint);
             // 
+            // btn_top_sold
+            // 
+            this.btn_top_sold.Location = new System.Drawing.Point(76, 484);
+            this.btn_top_sold.Name = "btn_top_sold";
+            this.btn_top_sold.Size = new System.Drawing.Size(170, 40);
+            this.btn_top_sold.TabIndex = 9;
+            this.btn_top_sold.Text = "Top Books";
+            this.btn_top_sold.UseVisualStyleBackColor = true;
+            this.btn_top_sold.Click += new System.EventHandler(this.btn_top_sold_Click);
+            // 
             // user_dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Book_Shop_Management_System.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(953, 655);
+            this.ClientSize = new System.Drawing.Size(953, 703);
             this.Controls.Add(this.pnl_user_main);
             this.Controls.Add(this.pnl_user_up);
             this.Controls.Add(this.pnl_user_side);
@@ -186,5 +210,7 @@
         private System.Windows.Forms.Button btncross;
         private System.Windows.Forms.Button btn_search_book;
         private System.Windows.Forms.Button btn_receipt;
+        private System.Windows.Forms.Button btn_submit_report;
+        private System.Windows.Forms.Button btn_top_sold;
     }
 }

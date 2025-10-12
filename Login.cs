@@ -54,15 +54,34 @@ namespace Book_Shop_Management_System
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            lblerror.Text = "";
+            lblerrorpass.Text = "";
+            if (string.IsNullOrWhiteSpace(txtUname.Text))
+            {
+                lblerror.Text = " * User Name required !";
+                if (string.IsNullOrWhiteSpace(txtupass.Text))
+                {
+                    lblerrorpass.Text = " * Password required !";
+                    return;
+                }
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtupass.Text))
+            {
+                lblerrorpass.Text = " * Password required !";
+                if (string.IsNullOrWhiteSpace(txtUname.Text))
+                {
+                    lblerror.Text = " * User Name required !";
+                    return;
+                }
+                    return;
+            }
             if (!Regex.IsMatch(txtUname.Text, @"^[a-zA-Z]+$"))
             {
                 lblerror.Text = " * Username must only contain letters !";
                 return;
             }
-            if (txtUname.Text == "")
-                lblerror.Text = " * User Name required !";
-            if (txtupass.Text == "")
-                lblerrorpass.Text = " * Password required !";
+            
             username = txtUname.Text;
             pass = txtupass.Text;
             string connectionString = @"Data Source=LAPTOP-7FEPICVT;Initial Catalog=BSMS;Integrated Security=True;";
@@ -131,6 +150,30 @@ namespace Book_Shop_Management_System
             owner_login own1 = new owner_login();
             own1.Show();
             this.Hide();
+        }
+
+        private void btnemployee_Click(object sender, EventArgs e)
+        {
+            Employee_Login emp1 = new Employee_Login();
+            emp1.Show();
+            this.Hide();
+        }
+
+        private void btn_author_Click(object sender, EventArgs e)
+        {
+            Author_Login l1 = new Author_Login();
+            l1.Show();
+            this.Hide();
+        }
+
+        private void btn_shutoff_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to shut down the application?","Confirm Exit",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void lblupass_Click(object sender, EventArgs e)

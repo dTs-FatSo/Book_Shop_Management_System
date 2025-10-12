@@ -42,6 +42,7 @@
             // lbl_own_name
             // 
             this.lbl_own_name.AutoSize = true;
+            this.lbl_own_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.lbl_own_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_own_name.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_own_name.Location = new System.Drawing.Point(38, 74);
@@ -53,6 +54,7 @@
             // lblupass
             // 
             this.lblupass.AutoSize = true;
+            this.lblupass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.lblupass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblupass.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblupass.Location = new System.Drawing.Point(64, 166);

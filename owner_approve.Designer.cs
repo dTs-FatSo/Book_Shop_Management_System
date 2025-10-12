@@ -33,6 +33,7 @@
             this.dgv_pendingorders = new System.Windows.Forms.DataGridView();
             this.btn_confirm = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pendingorders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             this.dgv_pendingorders.RowHeadersWidth = 51;
             this.dgv_pendingorders.RowTemplate.Height = 24;
             this.dgv_pendingorders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_pendingorders.Size = new System.Drawing.Size(642, 150);
+            this.dgv_pendingorders.Size = new System.Drawing.Size(642, 367);
             this.dgv_pendingorders.TabIndex = 1;
             this.dgv_pendingorders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pendingorders_CellClick);
             this.dgv_pendingorders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pendingorders_CellContentClick);
@@ -79,7 +80,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.BackColor = System.Drawing.Color.Red;
+            this.btn_cancel.BackColor = System.Drawing.Color.Salmon;
             this.btn_cancel.Location = new System.Drawing.Point(429, 46);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_cancel.Name = "btn_cancel";
@@ -89,12 +90,25 @@
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
+            // btn_close
+            // 
+            this.btn_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btn_close.Location = new System.Drawing.Point(243, 515);
+            this.btn_close.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(140, 45);
+            this.btn_close.TabIndex = 4;
+            this.btn_close.Text = "Close";
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // owner_approve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Book_Shop_Management_System.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(680, 727);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_confirm);
             this.Controls.Add(this.dgv_pendingorders);
@@ -116,5 +130,6 @@
         private System.Windows.Forms.DataGridView dgv_pendingorders;
         private System.Windows.Forms.Button btn_confirm;
         private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_close;
     }
 }

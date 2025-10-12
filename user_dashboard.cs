@@ -90,5 +90,15 @@ namespace Book_Shop_Management_System
         {
             loadform(new User_receipt());
         }
+
+        private void btn_submit_report_Click(object sender, EventArgs e)
+        {
+            loadform(new Report());
+        }
+
+        private void btn_top_sold_Click(object sender, EventArgs e)
+        {
+            loadform(new top_sold());
+        }
     }
 }
